@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import OneTable from './OneTable';
+import OneTable from '../Table/OneTable';
 import image1 from '../StartPage/images/emblem.jpg';
 import image2 from '../StartPage/images/information.jpg';
 
@@ -14,7 +14,7 @@ export default function AdmTables() {
       <Grid item container spacing={1} bgcolor="background.paper">
         <Grid item xs>
       <OneTable 
-      link={'adminpractic/table1'}
+      link={'adminpractic/table-adm-practic-1'}
       img={image2} 
       name="Привлечение к административной отвественности лица, возраст которого превышает 100 лет" 
       text="Краткая информация об НПА, применяющася в процессе службы в 
@@ -22,7 +22,7 @@ export default function AdmTables() {
       </Grid>
       <Grid item xs>
         <OneTable 
-         link ='tables' 
+         link ='adminpractic/table-adm-practic-2' 
         img={image1} 
         name='Привлечение к административной отвестенности лица, возраст которого мнее 13 лет' 
         text="Ошибки по таблицам АдмПрактики для исправления"/>

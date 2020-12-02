@@ -20,8 +20,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 //my
 import CustomizedTables from '../Table/CustomizedTables';
+import CustomizedTablesCopy from '../Table/CustomizedTables-copy';
 import AdmTables from '../AdmPractice/AdmTables';
 import {Link} from 'react-router-dom';
+import  { useState } from 'react';
 
 const drawerWidth = 240;
 
@@ -82,19 +84,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+
+export default function PersistentDrawerLeft(props) {
+ 
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
+  
   const handleDrawerClose = () => {
     setOpen(false);
   };
 
+  
+  
   return (
 <Router>
     <div className={classes.root}>
@@ -134,17 +140,19 @@ export default function PersistentDrawerLeft() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
+        {/* ['Таблица 1', 'Таблица 2', 'Таблица 3', 'Таблица 4'] */}
         <Divider />
         <List>
-        
-          {['Таблица 1', 'Таблица 2', 'Таблица 3', 'Таблица 4'].map((text, index) => (
+          {props.items.map((item, index) => (
           
-            <Link to = {`/adminpractic/table${index}` }
-            key={text}
+            <Link to = {item.link}
+            key={item.label}
           >
-           <ListItem button key={text}>
+            
+            
+           <ListItem button key={item.label}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={item.label} />
             </ListItem>
             </Link>
            
@@ -173,8 +181,11 @@ export default function PersistentDrawerLeft() {
        
         
           
-          <Route path='/adminpractic/table1'
+        <Route path='/adminpractic/table-adm-practic-1'
           component={CustomizedTables}
+          />
+          <Route path='/adminpractic/table-adm-practic-2'
+          component={CustomizedTablesCopy}
           />
           <Route path ='/adminpractic' component={AdmTables} exact/>
           
