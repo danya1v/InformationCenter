@@ -9,15 +9,13 @@ function App() {
   const menu = [
     {
       link: '/adminpractic/table-adm-practic-1',
-      label: 'Таблица 1'
+      label: 'Таблица 1',
     },
     {
       link: '/adminpractic/table-adm-practic-2',
-      label: 'Таблица 2'
+      label: 'Таблица 2',
     }
-  
-  
-  ]
+    ]
   return (
     <div className="App">
       <Router>

@@ -46,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CustomizedTables() {
+export default function CustomizedTables(props) {
   const classes = useStyles();
 
   return (
@@ -57,7 +57,7 @@ export default function CustomizedTables() {
         <TableHead>
           <TableRow>
             <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
+            <StyledTableCell align="right">{props.tableUrl}</StyledTableCell>
             <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
             <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
             <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>

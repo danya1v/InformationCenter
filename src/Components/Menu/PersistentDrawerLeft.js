@@ -178,16 +178,27 @@ export default function PersistentDrawerLeft(props) {
         })}
       >
         <div className={classes.drawerHeader} />
-       
-        
+       {/* <Router> */}
+        {/* {props.items.map((item, index) => ( */}
           
-        <Route path='/adminpractic/table-adm-practic-1'
-          component={CustomizedTables}
-          />
-          <Route path='/adminpractic/table-adm-practic-2'
-          component={CustomizedTablesCopy}
-          />
-          <Route path ='/adminpractic' component={AdmTables} exact/>
+           <Route path= '/adminpractic/:url'
+           render={
+             ({match}) => {
+               const {url} = match.params;
+
+            
+            
+            return <CustomizedTables tableUrl={url}/> }
+      
+          
+          }/>
+          
+          
+         
+        {/* ))} */}
+        <Route path ='/adminpractic' component={AdmTables} exact/>    
+          {/* </Router> */}
+        
           
         
       </main>

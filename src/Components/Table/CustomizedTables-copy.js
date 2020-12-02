@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -38,6 +38,13 @@ const rows = [
   createData('CКаккей', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
+const rowsTwo = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Эклер', 262, 16.0, 24, 6.0),
+  createData('CКаккей', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
 
 const useStyles = makeStyles({
   table: {
@@ -46,9 +53,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CustomizedTables() {
+export default function CustomizedTables(props) {
   const classes = useStyles();
-
   return (
     <Grid container justify="center">
     <Grid item xs={10} >
@@ -57,7 +63,7 @@ export default function CustomizedTables() {
         <TableHead>
           <TableRow>
             <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Калории</StyledTableCell>
+            <StyledTableCell align="right">`${props.id}`</StyledTableCell>
             <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
             <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
             <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
