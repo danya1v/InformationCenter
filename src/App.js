@@ -8,11 +8,11 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
   const menu = [
     {
-      link: '/adminpractic/table-adm-practic-1',
+      link: '/adminpractic/APtable1',
       label: 'Таблица 1',
     },
     {
-      link: '/adminpractic/table-adm-practic-2',
+      link: '/adminpractic/APtable2',
       label: 'Таблица 2',
     }
     ]

@@ -31,6 +31,21 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
+
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 700,
+    
+  },
+});
+const onAPtable2 = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
 const rows = [
   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
@@ -39,15 +54,10 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-    
-  },
-});
-
 export default function CustomizedTables(props) {
   const classes = useStyles();
+  
+  let rowers = [...`on${props.tableUrl}`]
 
   return (
     <Grid container justify="center">
@@ -58,13 +68,13 @@ export default function CustomizedTables(props) {
           <TableRow>
             <StyledTableCell>Dessert (100g serving)</StyledTableCell>
             <StyledTableCell align="right">{props.tableUrl}</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
+  <StyledTableCell align="right">{rowers}</StyledTableCell>
+            <StyledTableCell align="right">xz</StyledTableCell>
             <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rowers.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.name}

@@ -14,7 +14,7 @@ export default function AdmTables() {
       <Grid item container spacing={1} bgcolor="background.paper">
         <Grid item xs>
       <OneTable 
-      link={'adminpractic/table-adm-practic-1'}
+      link={'adminpractic/APtable1'}
       img={image2} 
       name="Привлечение к административной отвественности лица, возраст которого превышает 100 лет" 
       text="Краткая информация об НПА, применяющася в процессе службы в 
@@ -22,7 +22,7 @@ export default function AdmTables() {
       </Grid>
       <Grid item xs>
         <OneTable 
-         link ='adminpractic/table-adm-practic-2' 
+         link ='adminpractic/APtable1' 
         img={image1} 
         name='Привлечение к административной отвестенности лица, возраст которого мнее 13 лет' 
         text="Ошибки по таблицам АдмПрактики для исправления"/>
