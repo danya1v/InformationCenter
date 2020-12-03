@@ -19,8 +19,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 //my
-import CustomizedTables from '../Table/CustomizedTables';
-import CustomizedTablesCopy from '../Table/CustomizedTables-copy';
+import APtable1 from '../Table/APtable1';
+import APtable2 from '../Table/APtable2';
 import AdmTables from '../AdmPractice/AdmTables';
 import {Link} from 'react-router-dom';
 import  { useState } from 'react';
@@ -99,10 +99,9 @@ export default function PersistentDrawerLeft(props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
- 
-  
+  const provod = props.items;
   return (
+   
 <Router>
     <div className={classes.root}>
       <CssBaseline />
@@ -182,23 +181,17 @@ export default function PersistentDrawerLeft(props) {
        {/* <Router> */}
         {/* {props.items.map((item, index) => ( */}
           
-           <Route path= '/adminpractic/:url'
+           {/* <Route path= '/adminpractic/:url'
            render={
              ({match}) => {
                const {url} = match.params;
-
-            
-            
-            return <CustomizedTables tableUrl={url}/> }
-      
-          
-          }/>
-          
-          
+               return <APtable1 tableUrl={url}/> }}/> */}
          
+         <Route path ='/adminpractic' component={AdmTables}  exact/>   
+         <Route path ='/adminpractic/APtable1' component={APtable1} exact/>   
         {/* ))} */}
-        <Route path ='/adminpractic' component={AdmTables} exact/>    
-          {/* </Router> */}
+        <Route path ='/adminpractic/APtable2' component={APtable2} exact/>    
+          
         
           
         

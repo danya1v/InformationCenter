@@ -9,7 +9,7 @@ function App() {
   const menu = [
     {
       link: '/adminpractic/APtable1',
-      label: 'Таблица 1',
+      label: 'Привлечение к Адм. отв. лица, возраст которого менее 13 лет',
     },
     {
       link: '/adminpractic/APtable2',
