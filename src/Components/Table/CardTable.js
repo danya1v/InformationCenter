@@ -12,13 +12,14 @@ import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
-    width: 345,
+    maxWidth: 345,
     marginTop: '40px',
-    marginLeft : '30px',
-    marginRight : '30px',
+    marginLeft : '20px',
+    marginRight : '20px',
   },
   media: {
     height: 140,
+    
     
   },
   link: {
@@ -46,14 +47,14 @@ export default function ImgMediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         
           <Link to = {`/${props.link}`} className={classes.link}>
           <Button size="medium" color="primary"> Перейти</Button>
           </Link>
         
        
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

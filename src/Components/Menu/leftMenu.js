@@ -17,13 +17,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 //my
-import APtable1 from '../Table/APtable1';
-import APtable2 from '../Table/APtable2';
-import AdmTables from '../AdmPractice/AdmTables';
+import menu from '../../base'
 import {Link} from 'react-router-dom';
-import  { useState } from 'react';
 
 const drawerWidth = 240;
 
@@ -99,11 +96,8 @@ export default function PersistentDrawerLeft(props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const provod = props.items;
   return (
-   
-<Router>
-    <div className={classes.root}>
+     <div className={classes.root}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -143,7 +137,7 @@ export default function PersistentDrawerLeft(props) {
         {/* ['Таблица 1', 'Таблица 2', 'Таблица 3', 'Таблица 4'] */}
         <Divider />
         <List>
-          {props.items.map((item, index) => (
+          {menu.map((item, index) => (
           
             <Link to = {item.link}
             key={item.label}
@@ -177,26 +171,10 @@ export default function PersistentDrawerLeft(props) {
           [classes.contentShift]: open,
         })}
       >
-        <div className={classes.drawerHeader} />
-       {/* <Router> */}
-        {/* {props.items.map((item, index) => ( */}
-          
-           {/* <Route path= '/adminpractic/:url'
-           render={
-             ({match}) => {
-               const {url} = match.params;
-               return <APtable1 tableUrl={url}/> }}/> */}
-         
-         <Route path ='/adminpractic' component={AdmTables}  exact/>   
-         <Route path ='/adminpractic/APtable1' component={APtable1} exact/>   
-        {/* ))} */}
-        <Route path ='/adminpractic/APtable2' component={APtable2} exact/>    
-          
         
-          
-        
+        <div className={classes.drawerHeader} />            
       </main>
       
-    </div></Router>
+    </div>
   );
 }
