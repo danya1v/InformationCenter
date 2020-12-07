@@ -30,7 +30,7 @@ export default function AdmTables() {
 
         <Grid item xs className={classes.flex}>
         {menu.map((item, index) => (
-          <Link to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
+          <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
           <CardTable 
           key={item.label}
           img={item.img} 

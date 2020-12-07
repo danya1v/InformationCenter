@@ -10,7 +10,7 @@ const menu = [
     },
     {
       link: '/adminpractic/APtable2',
-      label: 'Таблица 2',
+      label: 'Таблица 2фы',
       img: emblem,
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '
     },

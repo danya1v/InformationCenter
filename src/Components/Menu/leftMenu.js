@@ -80,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  LinkClass: {
+    textDecoration: 'none',
+    color: 'black',
+  },
 }));
 
 
@@ -141,6 +145,7 @@ export default function PersistentDrawerLeft(props) {
           
             <Link to = {item.link}
             key={item.label}
+            className={classes.LinkClass}
           >
             
             
