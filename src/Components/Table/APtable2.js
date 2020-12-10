@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Axios from 'axios';
-import Button from '@material-ui/core/Button';
+import {ExportCSV} from './DownloadXLSX';
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -30,9 +30,7 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+
 
 
 
@@ -41,9 +39,7 @@ const useStyles = makeStyles({
     minWidth: 700,
     
   },
-  btn: {
-    textAlign: 'center',
-  }
+  
 });
 
 
@@ -61,12 +57,11 @@ export default function CustomizedTables(props) {
 
   
   return (
-    <>
-    <Button className={classes.btn} variant="contained" color="secondary">Download </Button>
+    <Grid>
     <Grid container justify="center">
       
     <Grid item xs={10} >
-    <TableContainer component={Paper} >
+    <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -77,7 +72,7 @@ export default function CustomizedTables(props) {
             <StyledTableCell align="right">Ещё что-то</StyledTableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody >
           {dataInfo.map((row) => (
             <StyledTableRow key={row.number}>
               <StyledTableCell component="th" scope="row">
@@ -89,11 +84,17 @@ export default function CustomizedTables(props) {
               <StyledTableCell align="right">{row.xz}</StyledTableCell>
             </StyledTableRow>
           ))}
-        </TableBody>
+        </TableBody >
       </Table>
     </TableContainer>
     </Grid>
+
+    </Grid >
+    
+    <Grid container justify="flex-end" item xs={11} style={{ marginTop: 40 }}>
+    <ExportCSV  csvData={dataInfo} fileName='File' />
     </Grid>
-    </>
+    
+    </Grid>
   );
 }
