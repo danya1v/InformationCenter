@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,6 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Axios from 'axios';
+import Button from '@material-ui/core/Button';
+
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -38,44 +41,52 @@ const useStyles = makeStyles({
     minWidth: 700,
     
   },
+  btn: {
+    textAlign: 'center',
+  }
 });
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+
 
 export default function CustomizedTables(props) {
   const classes = useStyles();
-  
+  const [dataInfo, setDataInfo] = useState([]);
+
+  useEffect(() => {
+    Axios.get('http://localhost:3001/api/get2')
+          .then((response) => {
+            setDataInfo(response.data)
+          })
+  }, [])
+
   
   return (
+    <>
+    <Button className={classes.btn} variant="contained" color="secondary">Download </Button>
     <Grid container justify="center">
+      
     <Grid item xs={10} >
     <TableContainer component={Paper} >
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">{props.tableUrl}</StyledTableCell>
-  <StyledTableCell align="right">HZ</StyledTableCell>
-            <StyledTableCell align="right">xz</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell>Номер </StyledTableCell>
+            <StyledTableCell align="right">ФИО</StyledTableCell>
+  <StyledTableCell align="right">Факт</StyledTableCell>
+            <StyledTableCell align="right">Подразделение</StyledTableCell>
+            <StyledTableCell align="right">Ещё что-то</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {dataInfo.map((row) => (
+            <StyledTableRow key={row.number}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {row.number}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.FIO}</StyledTableCell>
+              <StyledTableCell align="right">{row.what}</StyledTableCell>
+              <StyledTableCell align="right">{row.podr}</StyledTableCell>
+              <StyledTableCell align="right">{row.xz}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -83,5 +94,6 @@ export default function CustomizedTables(props) {
     </TableContainer>
     </Grid>
     </Grid>
+    </>
   );
 }
