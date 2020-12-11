@@ -3,13 +3,13 @@ import gibdd from './Components/StartPage/images/gibdd.png'
 
 const menu = [
     {
-      link: '/adminpractic/APtable1',
+      link: '/adminpractic/1',
       label: 'Привлечение к Адм. отв. лица, возраст которого менее 13 лет',
       img:emblem,
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '
     },
     {
-      link: '/adminpractic/APtable2',
+      link: '/adminpractic/2',
       label: 'Таблица 2фы',
       img: emblem,
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '

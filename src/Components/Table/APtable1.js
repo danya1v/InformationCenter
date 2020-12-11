@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Axios from 'axios';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -45,8 +46,9 @@ export default function CustomizedTables(props) {
   const [dataInfo, setDataInfo] = useState([]);
 
 
+
   useEffect(() => {
-    Axios.get('http://localhost:3001/api/get1')
+    Axios.get(`http://localhost:3001/api/get${props.Id}`)
           .then((response) => {
             setDataInfo(response.data)
           })
@@ -57,6 +59,7 @@ export default function CustomizedTables(props) {
   
   
   return (
+    <>
     <Grid container justify="center">
     <Grid item xs={10} >
     <TableContainer component={Paper} >
@@ -86,5 +89,17 @@ export default function CustomizedTables(props) {
     </TableContainer>
     </Grid>
     </Grid>
+    {/* <Router>
+        
+        <Route path ='/adminpractic/:id' render={
+          ({match}) => {
+            const {id} = match.params;
+            console.log({match})
+          return <CustomizedTables Id={id} />
+          }
+        }/>  
+  
+    </Router> */}
+    </>
   );
 }

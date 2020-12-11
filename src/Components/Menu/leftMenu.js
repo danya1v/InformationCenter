@@ -17,10 +17,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 //my
 import menu from '../../base'
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+//my
+import CustomizedTables from '../Table/APtable1';
 
 const drawerWidth = 240;
 
@@ -119,8 +123,17 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
+          <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        endIcon={<Icon>send</Icon>}
+        style={{ marginRight: 40 }}
+      >
+        Send
+      </Button>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            Информационный портал РОИО ГИБДД
           </Typography>
         </Toolbar>
       </AppBar>
@@ -143,7 +156,7 @@ export default function PersistentDrawerLeft(props) {
         <List>
           {menu.map((item, index) => (
           
-            <Link to = {item.link}
+            <NavLink to = {item.link}
             key={item.label}
             className={classes.LinkClass}
           >
@@ -153,7 +166,7 @@ export default function PersistentDrawerLeft(props) {
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItem>
-            </Link>
+            </NavLink>
            
           
           ))}
