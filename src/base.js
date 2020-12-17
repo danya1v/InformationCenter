@@ -15,13 +15,13 @@ const menu = [
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '
     },
     {
-      link: '/adminpractic/APtable1',
+      link: '/adminpractic/3',
       label: 'Таблица 3',
       img:gibdd,
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '
     },
     {
-      link: '/adminpractic/APtable2',
+      link: '/adminpractic/4',
       label: 'Таблица 4',
       img:gibdd,
       text: 'Краткая информация об НПА, применяющася в процессе службы в ОВД '
