@@ -17,8 +17,8 @@ export default function MainFrame() {
   <>
           
         <Router>
-        <PersistentDrawerLeft />
-         <Route path ='/adminpractic' component={AdmTables} exact/>   
+        <Route component = {PersistentDrawerLeft} />
+        <Route path ='/adminpractic' component={AdmTables} exact/>   
         <Route path ='/adminpractic/:id' render={
           ({match}) => {
             const {id} = match.params;

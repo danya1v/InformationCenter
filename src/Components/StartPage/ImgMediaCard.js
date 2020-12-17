@@ -32,6 +32,8 @@ export default function ImgMediaCard(props) {
   
   return (
     <Card className={classes.root} >
+               <Link to = {`/${props.link}`} className={classes.link}>
+
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -47,14 +49,8 @@ export default function ImgMediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        
-          <Link to = {`/${props.link}`} className={classes.link}>
-          <Button size="medium" color="primary" > Перейти</Button>
-          </Link>
-        
-       
-      </CardActions>
+   
+      </Link>
     </Card>
   );
 }

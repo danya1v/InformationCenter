@@ -17,12 +17,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 //my
 import menu from '../../base'
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 //my
 import CustomizedTables from '../Table/APtable1';
 
@@ -153,25 +153,56 @@ export default function PersistentDrawerLeft(props) {
         </div>
         {/* ['Таблица 1', 'Таблица 2', 'Таблица 3', 'Таблица 4'] */}
         <Divider />
+        {/* <Router>
+        <List>
+        {menu.map((item, index) => (
+              <Link to = {loc => ({...item.link, pathname: `${item.link}`})}
+              key={item.label}
+              className={classes.LinkClass}
+            >             
+         <ListItem button key={item.label}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={item.label} />
+          </ListItem>
+          </Link>
+        ))}
+        <Switch>
+        {menu.map((item, index) => (
+        <Route
+              key={index}
+                path={item.link}
+                exact={true}
+                
+        />                            
+          ))}
+        </Switch>
+
+
+        </List>
+        
+
+        </Router> */}
         <List>
           {menu.map((item, index) => (
           
-            <NavLink to = {item.link}
+          
+            <Link to = {item.link}
             key={item.label}
             className={classes.LinkClass}
           >
-            
-            
-           <ListItem button key={item.label}>
+
+                     
+           <ListItem button key={item.label} >
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItem>
-            </NavLink>
-           
+          
+           </Link>
           
           ))}
           
         </List>
+        
         <Divider />
         
         <List>
@@ -193,6 +224,8 @@ export default function PersistentDrawerLeft(props) {
         <div className={classes.drawerHeader} />            
       </main>
       
+      
+
     </div>
   );
 }
