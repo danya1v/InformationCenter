@@ -43,9 +43,7 @@ const useStyles = makeStyles({
 
 
 export default function CustomizedTables(props) {
-  const [dataInfo, setDataInfo] = useState([]);
-
-
+  const [dataInfo, setDataInfo] = useState([0]);
 
   useEffect(() => {
     Axios.get(`http://localhost:3001/api/get${props.Id}`)
@@ -54,32 +52,10 @@ export default function CustomizedTables(props) {
             
           })
   }, [props.Id])
-  
+
  
   const classes = useStyles();
-  
-  let rowsName = 0;
-  // let coubt = function (){
-  //   dataInfo.find((row) => (
-            
-  //     rowsName++
-      
-  //   ))
-  // }
-  // coubt();
-  let ideshka = props.Id;
-  let tableNumber = 4;
-  if (ideshka === ("2" || "4")) {
-    tableNumber = 5;
-  } else {
-    tableNumber = 4;
-  }
-  if (ideshka === ("4" || "2")) {
-    tableNumber = 5;
-  } else {
-    tableNumber = 4;
-  }
-  
+
   return (
     <>
     
@@ -88,46 +64,14 @@ export default function CustomizedTables(props) {
     <TableContainer component={Paper} >
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
-          {console.log(props.Id)}
-          {console.log(tableNumber)}
+  
           <TableRow>
-
-         
-
-          
-            {/* {console.log(Object.keys(dataInfo).length)}
-            {console.log(dataInfo.[1])} */}
-
-
-          {/* {rowsName.map((item, i) => (
-            
-            
-              <StyledTableCell align="right" key={i}>
-                {item}
-              </StyledTableCell>
-            
-            
-          ))} */}
-
-
           <StyledTableCell>Номер</StyledTableCell>
             <StyledTableCell align="right">ФИО</StyledTableCell>
             <StyledTableCell align="right">Факт</StyledTableCell>
             <StyledTableCell align="right">Подразделение</StyledTableCell>
-            {tableNumber === 5 ? <StyledTableCell align="right">Ещё что-то</StyledTableCell> : null}
-            
-      {/* {dataInfo.map((lengthMap)=> (
-        Object.keys(lengthMap).length !== 4) ? <StyledTableCell align="right">xz</StyledTableCell> : ''
-      )} */}
-      {/* {console.log(dataInfo.[props.Id])} */}
-      {/* {(dataInfo.forEach((e) => {
-      (numCallbackRuns = numCallbackRuns +1)
-      })) }
-      {numCallbackRuns === '1' ? <StyledTableCell align="right" >33</StyledTableCell> : <StyledTableCell align="right" >11</StyledTableCell> } */}
-          {/* {dataInfo.map((row) => ( */}
-{/* {      dataInfo.forEach(e => (Object.keys(e).length === 5  ? <StyledTableCell align="right" >33</StyledTableCell> : null))}             */}
-            {/* )))} */}
-          
+            {(Object.keys(dataInfo[0]).length) === 5 ? <StyledTableCell align="right" >Ещё что-то</StyledTableCell> : null}
+    
             </TableRow>
           
         </TableHead>
