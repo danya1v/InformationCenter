@@ -46,7 +46,6 @@ export default function CustomizedTables(props) {
   const [dataInfo, setDataInfo] = useState([0]);
 
   useEffect(() => {
-    console.log('effect');
     Axios.get(`http://localhost:3001/api/get${props.Id}`)
           .then((response) => {
             setDataInfo(response.data)
@@ -60,18 +59,18 @@ export default function CustomizedTables(props) {
   return (
     <>
     
-    <Grid container justify="center">
-    <Grid item xs={10} >
-    <TableContainer component={Paper} >
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
+    <Grid container justify="center" >
+    <Grid item xs={10}  >
+    <TableContainer component={Paper}  >
+      <Table className={classes.table} aria-label="customized table" >
+        <TableHead >
   
-          <TableRow>
-          <StyledTableCell>Номер</StyledTableCell>
-            <StyledTableCell align="right">ФИО</StyledTableCell>
-            <StyledTableCell align="right">Факт</StyledTableCell>
-            <StyledTableCell align="right">Подразделение</StyledTableCell>
-            {(Object.keys(dataInfo[0]).length) === 5 ? <StyledTableCell align="right" >Ещё что-то</StyledTableCell> : null}
+          <TableRow >
+          <StyledTableCell >Номер</StyledTableCell>
+            <StyledTableCell align="right" >ФИО</StyledTableCell>
+            <StyledTableCell align="right" >Факт</StyledTableCell>
+            <StyledTableCell align="right" >Подразделение</StyledTableCell>
+            {(Object.keys(dataInfo[0]).length) === 5 ? <StyledTableCell align="right">Ещё что-то</StyledTableCell> : null}
     
             </TableRow>
           
@@ -80,7 +79,7 @@ export default function CustomizedTables(props) {
           {dataInfo.map((row) => (
             
             <StyledTableRow key={row.number}>
-              <StyledTableCell component="th" scope="row">
+              <StyledTableCell component="th" scope="row" >
                 {Object.values(row)[0]}
               </StyledTableCell>
               <StyledTableCell align="right">{Object.values(row)[1]}</StyledTableCell>

@@ -4,7 +4,6 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 //my
 import CustomizedTables from '../Table/APtable1';
-import APtable2 from '../Table/APtable2';
 import AdmTables from '../AdmPractice/AdmTables';
 import PersistentDrawerLeft from '../Menu/leftMenu';
 

@@ -24,7 +24,6 @@ import Icon from '@material-ui/core/Icon';
 import menu from '../../base'
 import {Link} from 'react-router-dom';
 //my
-import CustomizedTables from '../Table/APtable1';
 
 const drawerWidth = 240;
 
