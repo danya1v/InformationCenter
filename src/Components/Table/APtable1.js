@@ -46,7 +46,7 @@ export default function CustomizedTables(props) {
   const [dataInfo, setDataInfo] = useState([0]);
 
   useEffect(() => {
-    Axios.get(`http://localhost:3001/api/get${props.Id}`)
+    Axios.get(`http://10.89.100.31:3001/api/get${props.Id}`)
           .then((response) => {
             setDataInfo(response.data)
             
