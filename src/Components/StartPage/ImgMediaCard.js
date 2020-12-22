@@ -23,6 +23,7 @@ const useStyles = makeStyles({
   link: {
     textDecoration : 'none',
   },
+  
  
  
 });
@@ -32,7 +33,7 @@ export default function ImgMediaCard(props) {
   
   return (
     <Card className={classes.root} >
-               <Link to = {`/${props.link}`} className={classes.link}>
+     <Link to = {`/${props.link}`} className={classes.link}>
 
       <CardActionArea>
         <CardMedia

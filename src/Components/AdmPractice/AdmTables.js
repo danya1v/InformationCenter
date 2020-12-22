@@ -36,15 +36,12 @@ export default function AdmTables() {
           text={item.text}
         >
           
-          
           </CardTable>
          
          </Link>
         ))}
       
       </Grid>
-
-
      {  /*
       <Grid item xs>
         <CardTable 
@@ -53,38 +50,7 @@ export default function AdmTables() {
         name='Привлечение к административной отвестенности лица, возраст которого мнее 13 лет' 
         text="Ошибки по таблицам АдмПрактики для исправления"/>
         </Grid>
-        
-        <Grid item xs>
-        <CardTable 
-        img={image1} 
-        name='Привлечение водителя по статье КоАП РФ, субъектом которой является пешеход"' 
-        text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
-         </Grid>
-         
-         <Grid item xs>
-             <CardTable 
-        img={image1} 
-        name='Привлечение водителя по статье КоАП РФ, субъектом которой является пешеход"' 
-        text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
-        </Grid>
-        <Grid item xs>
-         <CardTable 
-        img={image1} 
-        name='Привлечение водителя по статье КоАП РФ, субъектом которой является пешеход"' 
-        text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
-         </Grid>
-         <Grid item xs>
-         <CardTable 
-        img={image1} 
-        name='Привлечение водителя по статье КоАП РФ, субъектом которой является пешеход"' 
-        text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
-        </Grid>
-        <Grid item xs>
-         <CardTable 
-        img={image1} 
-        name='Привлечение водителя по статье КоАП РФ, субъектом которой является пешеход"' 
-        text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
-      </Grid> */}
+        */}
       </Grid>
       
     </Container>

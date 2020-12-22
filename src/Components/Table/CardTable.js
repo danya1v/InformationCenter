@@ -16,11 +16,11 @@ const useStyles = makeStyles({
     marginTop: '40px',
     marginLeft : '20px',
     marginRight : '20px',
-    minHeight: '350px',
   },
   media: {
     height: 140,
     
+    minHeight: '190px',
     
   },
   link: {
@@ -48,14 +48,6 @@ export default function ImgMediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      {/* <CardActions>
-        
-          <Link to = {`/${props.link}`} className={classes.link}>
-          <Button size="medium" color="primary"> Перейти</Button>
-          </Link>
-        
-       
-      </CardActions> */}
     </Card>
   );
 }

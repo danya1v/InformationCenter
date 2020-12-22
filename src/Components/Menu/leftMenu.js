@@ -20,12 +20,13 @@ import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 //my
 import menu from '../../base'
 import {Link} from 'react-router-dom';
 //my
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 
 const useStyles = makeStyles((theme) => ({
@@ -122,7 +123,7 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Button
+          {/* <Button
         variant="contained"
         color="primary"
         className={classes.button}
@@ -130,7 +131,7 @@ export default function PersistentDrawerLeft(props) {
         style={{ marginRight: 40 }}
       >
         Send
-      </Button>
+      </Button> */}
           <Typography variant="h6" noWrap>
             Информационный портал РОИО ГИБДД
           </Typography>
@@ -150,55 +151,22 @@ export default function PersistentDrawerLeft(props) {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-        {/* ['Таблица 1', 'Таблица 2', 'Таблица 3', 'Таблица 4'] */}
-        <Divider />
-        {/* <Router>
-        <List>
-        {menu.map((item, index) => (
-              <Link to = {loc => ({...item.link, pathname: `${item.link}`})}
-              key={item.label}
-              className={classes.LinkClass}
-            >             
-         <ListItem button key={item.label}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={item.label} />
-          </ListItem>
-          </Link>
-        ))}
-        <Switch>
-        {menu.map((item, index) => (
-        <Route
-              key={index}
-                path={item.link}
-                exact={true}
-                
-        />                            
-          ))}
-        </Switch>
-
-
-        </List>
         
-
-        </Router> */}
+        <Divider />
         <List>
           {menu.map((item, index) => (
-          
-          
-            <Link to = {item.link}
+           <Link to = {item.link}
             key={item.label}
             className={classes.LinkClass}
-          >
-
-                     
+          >     
            <ListItem button key={item.label} >
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+           <ListItemIcon><ArrowRightIcon /></ListItemIcon>
+
+              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText primary={item.label} />
             </ListItem>
-          
-           </Link>
-          
-          ))}
+          </Link>
+         ))}
           
         </List>
         
