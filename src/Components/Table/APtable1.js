@@ -41,7 +41,6 @@ const useStyles = makeStyles({
   },
 });
 
-
 export default function CustomizedTables(props) {
   const [dataInfo, setDataInfo] = useState([0]);
 
@@ -58,7 +57,7 @@ export default function CustomizedTables(props) {
 
   return (
     <>
-    
+    {console.log(dataInfo)}
     <Grid container justify="center" >
     <Grid item xs={10}  >
     <TableContainer component={Paper}  >
@@ -80,12 +79,15 @@ export default function CustomizedTables(props) {
             
             <StyledTableRow key={row.number}>
               <StyledTableCell component="th" scope="row" >
-                {Object.values(row)[0]}
+                {row[Object.keys(row)[0]]}
               </StyledTableCell>
-              <StyledTableCell align="right">{Object.values(row)[1]}</StyledTableCell>
-              <StyledTableCell align="right">{Object.values(row)[2]}</StyledTableCell>
-              <StyledTableCell align="right">{Object.values(row)[3]}</StyledTableCell>
-              {Object.keys(row).length === 5 ? <StyledTableCell align="right" >{Object.values(row)[4]}</StyledTableCell> : null}
+              <StyledTableCell align="right">{row[Object.keys(row)[1]]}</StyledTableCell>
+              <StyledTableCell align="right">{row[Object.keys(row)[2]]}</StyledTableCell>
+              <StyledTableCell align="right">{row[Object.keys(row)[3]]}</StyledTableCell>
+
+              {Object.keys(row).length === 5 ? <StyledTableCell align="right" >{row[Object.keys(row)[4]]}</StyledTableCell> : null}
+              
+
             </StyledTableRow>
             
           ))}

@@ -1,0 +1,11 @@
+{
+    "presets": [
+      ["env", {
+        "targets": {
+          // The % refers to the global coverage of users from browserslist
+          "chrome": "80"
+          // "ie" : "11"
+        }
+      }]
+    ]
+  }
