@@ -24,11 +24,15 @@ export default function StartPage() {
         <ImgMediaCard 
          link ='adminpractic' 
         img={image1} 
-        name='Подсистема "АдмПрактика"' 
+        name='Подсистема Административная Практика' 
         text="Ошибки по таблицам АдмПрактики для исправления"/>
         <ImgMediaCard 
         img={image1} 
-        name='Подсистема "что-то Практика"' 
+        name='Подсистема Водитель' 
+        text="Ошибки по таблицам Водитель для исправления"/>
+        <ImgMediaCard 
+        img={image1} 
+        name='Подсистема Транспорт' 
         text="lorem inpectus inprisum momento lorem inpectus inprisum momento lorem inpectus inprisum momento"/>
       </Box>
       

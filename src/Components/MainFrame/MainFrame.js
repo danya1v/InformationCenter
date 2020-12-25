@@ -4,7 +4,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 //my
 import CustomizedTables from '../Table/APtable1';
-import AdmTables from '../AdmPractice/AdmTables';
+import AdmPractice from '../AdmPractice/AdmPractice';
 import PersistentDrawerLeft from '../Menu/leftMenu';
 
 
@@ -17,7 +17,7 @@ export default function MainFrame() {
           
         <Router>
         <Route component = {PersistentDrawerLeft} />
-        <Route path ='/adminpractic' component={AdmTables} exact/>   
+        <Route path ='/adminpractic' component={AdmPractice} exact/>   
         <Route path ='/adminpractic/:id' render={
           ({match}) => {
             const {id} = match.params;

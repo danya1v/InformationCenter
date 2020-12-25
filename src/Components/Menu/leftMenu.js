@@ -22,7 +22,10 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 //my
-import menu from '../../base'
+import menu from '../../admpractic';
+import voditel from '../../voditel'
+import auto from '../../auto'
+
 import {Link} from 'react-router-dom';
 //my
 
@@ -172,14 +175,44 @@ export default function PersistentDrawerLeft(props) {
         
         <Divider />
         
+        <Divider />
         <List>
-          {['Таблица 5', 'Таблица 6', 'Таблица 777'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          {voditel.map((item, index) => (
+           <Link to = {item.link}
+            key={item.label}
+            className={classes.LinkClass}
+          >     
+           <ListItem button key={item.label} >
+           <ListItemIcon><ArrowRightIcon /></ListItemIcon>
+
+              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+              <ListItemText primary={item.label} />
             </ListItem>
-          ))}
+          </Link>
+         ))}
+          
         </List>
+        
+        <Divider />
+        <Divider />
+        <List>
+          {auto.map((item, index) => (
+           <Link to = {item.link}
+            key={item.label}
+            className={classes.LinkClass}
+          >     
+           <ListItem button key={item.label} >
+           <ListItemIcon><ArrowRightIcon /></ListItemIcon>
+
+              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+              <ListItemText primary={item.label} />
+            </ListItem>
+          </Link>
+         ))}
+          
+        </List>
+        
+        <Divider />
         
       </Drawer>
       <main

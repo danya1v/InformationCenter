@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import CardTable from '../Table/CardTable';
-import menu from '../../base';
+import admpractic from '../../admpractic';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,13 +11,13 @@ const useStyles = makeStyles({
   flex: {
     display: 'flex!important',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'centxer',
    
   }
  
 });
 
-export default function AdmTables() {
+export default function AdmPractice() {
   const classes = useStyles();
   return (
    
@@ -27,7 +27,7 @@ export default function AdmTables() {
       <Grid item container spacing={1} bgcolor="background.paper" >
 
         <Grid item xs className={classes.flex}>
-        {menu.map((item, index) => (
+        {admpractic.map((item, index) => (
           <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
           <CardTable 
           key={item.label}
