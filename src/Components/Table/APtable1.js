@@ -70,6 +70,8 @@ export default function CustomizedTables(props) {
             <StyledTableCell align="right" >Факт</StyledTableCell>
             <StyledTableCell align="right" >Подразделение</StyledTableCell>
             {(Object.keys(dataInfo[0]).length) === 5 ? <StyledTableCell align="right">Ещё что-то</StyledTableCell> : null}
+            {(Object.keys(dataInfo[0]).length) === 6 ? <StyledTableCell align="right">Ещё что-то</StyledTableCell> : null}
+            {(Object.keys(dataInfo[0]).length) === 7 ? <StyledTableCell align="right">Ещё что-то</StyledTableCell> : null}
     
             </TableRow>
           
@@ -86,7 +88,8 @@ export default function CustomizedTables(props) {
               <StyledTableCell align="right">{row[Object.keys(row)[3]]}</StyledTableCell>
 
               {Object.keys(row).length === 5 ? <StyledTableCell align="right" >{row[Object.keys(row)[4]]}</StyledTableCell> : null}
-              
+              {Object.keys(row).length === 6 ? <StyledTableCell align="right" >{row[Object.keys(row)[5]]}</StyledTableCell> : null}
+              {Object.keys(row).length === 7 ? <StyledTableCell align="right" >{row[Object.keys(row)[6]]}</StyledTableCell> : null}
 
             </StyledTableRow>
             

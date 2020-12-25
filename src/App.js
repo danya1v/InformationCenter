@@ -11,6 +11,9 @@ function App() {
     <div className="App">
       <Router>
       <Route path='/adminpractic'><MainFrame  /></Route>
+      <Route path='/driver'><MainFrame  /></Route>
+      <Route path='/transport'><MainFrame  /></Route>
+
       <Route path ='/' exact component={StartPage}/>
       </Router>
     </div>

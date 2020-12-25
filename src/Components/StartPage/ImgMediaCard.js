@@ -16,13 +16,26 @@ const useStyles = makeStyles({
     textDecoration : 'none',
     marginLeft : '30px',
     marginRight : '30px',
+    marginTop: '50px',
+    
   },
   media: {
     height: 140,
   },
   link: {
     textDecoration : 'none',
+   
   },
+  text: {
+    color: 'black!important',
+    textDecoration: 'none!important',
+    
+    height: "100%",
+  },
+  card: {
+   
+  }
+  
   
  
  
@@ -35,14 +48,14 @@ export default function ImgMediaCard(props) {
     <Card className={classes.root} >
      <Link to = {`/${props.link}`} className={classes.link}>
 
-      <CardActionArea>
+      <CardActionArea className={classes.card}>
         <CardMedia
           className={classes.media}
           image= {props.img}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" className={classes.text}>
             {props.name}
           </Typography>
           <Typography  variant="body2" color="textSecondary" component="p">

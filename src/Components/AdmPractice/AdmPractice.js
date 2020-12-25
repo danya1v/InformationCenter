@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import CardTable from '../Table/CardTable';
 import admpractic from '../../admpractic';
+import voditel from '../../voditel';
+import auto from '../../auto';
+
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,23 +14,30 @@ const useStyles = makeStyles({
   flex: {
     display: 'flex!important',
     flexWrap: 'wrap',
-    justifyContent: 'centxer',
+    justifyContent: 'center',
    
   }
  
 });
 
-export default function AdmPractice() {
+export default function AdmPractice(props) {
+  // const [vTable, setVTable] = useState(props.table);
+  const vTable = props.table;
+  
+
   const classes = useStyles();
+    
   return (
    
     <>
     <Container style={{ width: '110%' }}>
+    {/* {props.table = 2 ? console.log(2): console.log('no')} */}
+    {console.log(vTable)}
 
       <Grid item container spacing={1} bgcolor="background.paper" >
-
+    
         <Grid item xs className={classes.flex}>
-        {admpractic.map((item, index) => (
+          {vTable === 1 ? (admpractic.map((item, index) => (
           <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
           <CardTable 
           key={item.label}
@@ -39,7 +49,32 @@ export default function AdmPractice() {
           </CardTable>
          
          </Link>
-        ))}
+        ))) : vTable === 2 ? (voditel.map((item, index) => (
+          <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
+          <CardTable 
+          key={item.label}
+          img={item.img} 
+          name={item.label} 
+          text={item.text}
+        >
+          
+          </CardTable>
+         
+         </Link>
+        ))) : (auto.map((item, index) => (
+          <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
+          <CardTable 
+          key={item.label}
+          img={item.img} 
+          name={item.label} 
+          text={item.text}
+        >
+          
+          </CardTable>
+         
+         </Link>
+        )))}
+       
       
       </Grid>
      {  /*

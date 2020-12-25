@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 const useStyles = makeStyles({
@@ -34,11 +36,12 @@ export default function ImgMediaCard(props) {
   return (
     <Card className={classes.root} >
       <CardActionArea>
-        <CardMedia
+        {props.img ? (<CardMedia
           className={classes.media}
           image= {props.img}
           title="Contemplative Reptile"
-        />
+        />): (<CircularProgress />)}
+        
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
