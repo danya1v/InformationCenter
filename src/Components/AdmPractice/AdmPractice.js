@@ -32,9 +32,7 @@ export default function AdmPractice(props) {
     <>
     <Container style={{ width: '110%' }}>
     {/* {props.table = 2 ? console.log(2): console.log('no')} */}
-    {console.log(vTable)}
-
-      <Grid item container spacing={1} bgcolor="background.paper" >
+          <Grid item container spacing={1} bgcolor="background.paper" >
     
         <Grid item xs className={classes.flex}>
           {vTable === 1 ? (admpractic.map((item, index) => (

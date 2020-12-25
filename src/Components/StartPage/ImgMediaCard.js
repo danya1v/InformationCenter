@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     color: 'black!important',
     textDecoration: 'none!important',
     
-    height: "100%",
+    minHeight: '50px',
   },
   card: {
    
@@ -45,8 +45,9 @@ export default function ImgMediaCard(props) {
   const classes = useStyles();
   
   return (
+    <Link to = {`/${props.link}`} className={classes.link}>
     <Card className={classes.root} >
-     <Link to = {`/${props.link}`} className={classes.link}>
+     
 
       <CardActionArea className={classes.card}>
         <CardMedia
@@ -64,7 +65,8 @@ export default function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
    
-      </Link>
+     
     </Card>
+     </Link>
   );
 }
