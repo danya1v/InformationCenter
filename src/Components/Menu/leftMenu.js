@@ -29,7 +29,7 @@ import auto from '../../auto'
 import {Link} from 'react-router-dom';
 //my
 
-const drawerWidth = 300;
+const drawerWidth = 350;
 
 
 const useStyles = makeStyles((theme) => ({
@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
+    
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
@@ -161,6 +162,7 @@ export default function PersistentDrawerLeft(props) {
            <Link to = {item.link}
             key={item.label}
             className={classes.LinkClass}
+            onClick={handleDrawerClose}
           >     
            <ListItem button key={item.label} >
            <ListItemIcon><ArrowRightIcon /></ListItemIcon>
@@ -181,6 +183,7 @@ export default function PersistentDrawerLeft(props) {
            <Link to = {item.link}
             key={item.label}
             className={classes.LinkClass}
+            onClick={handleDrawerClose}
           >     
            <ListItem button key={item.label} >
            <ListItemIcon><ArrowRightIcon /></ListItemIcon>
@@ -199,6 +202,7 @@ export default function PersistentDrawerLeft(props) {
           {auto.map((item, index) => (
            <Link to = {item.link}
             key={item.label}
+            onClick={handleDrawerClose}
             className={classes.LinkClass}
           >     
            <ListItem button key={item.label} >

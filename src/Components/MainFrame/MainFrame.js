@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 //my
-import CustomizedTables from '../Table/APtable1';
+import CustomizedTables from '../Table/CustomizedTables';
 import AdmPractice from '../AdmPractice/AdmPractice';
 import PersistentDrawerLeft from '../Menu/leftMenu';
 
@@ -23,7 +23,6 @@ export default function MainFrame() {
         <Route path ='/adminpractic/:id' render={
           ({match}) => {
             const {id} = match.params;
-            console.log({match})
           return <CustomizedTables Id={id} />
           }
         }/>  
@@ -31,7 +30,6 @@ export default function MainFrame() {
         <Route path ='/driver/:id' render={
           ({match}) => {
             const {id} = match.params;
-            console.log({match})
           return <CustomizedTables Id={id} />
           }
         }/>  
@@ -39,7 +37,6 @@ export default function MainFrame() {
         <Route path ='/transport/:id' render={
           ({match}) => {
             const {id} = match.params;
-            console.log({match})
           return <CustomizedTables Id={id} />
           }
         }/>  

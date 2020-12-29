@@ -2,7 +2,7 @@ import './App.css';
 import MainFrame from './Components/MainFrame/MainFrame'
 // import ImgMediaCard from './Components/StartPage/ImgMediaCard'
 import StartPage from './Components/StartPage/StartPage'
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 
 
 function App() {
