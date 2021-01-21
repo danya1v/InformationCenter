@@ -41,7 +41,7 @@ export default function MainFrame() {
         <Route path ='/transport/:id' render={
           ({match}) => {
             const {id} = match.params;
-          return <CustomizedTables Id={id}table={table3} />
+          return <CustomizedTables Id={id} table={table3} />
           }
         }/>  
 

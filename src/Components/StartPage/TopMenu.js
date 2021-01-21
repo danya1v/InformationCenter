@@ -39,9 +39,7 @@ export default function TopMenu() {
           <Typography variant="h6" className={classes.title}>
             Добро пожаловать на информационный портал РОИО
           </Typography>
-          <Link to = {`/`} className={classes.link}>
-          <Button color="inherit">Вернуться на главную</Button>
-          </Link>
+         
           <Button color="inherit">Обратиться за поддержкой</Button>
 
           

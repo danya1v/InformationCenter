@@ -132,9 +132,10 @@ export default function PersistentDrawerLeft(props) {
   };
 
   
-
+ 
   return (
     <>
+ {console.log(props.nameTwo)}
     <div className={classes.root}>
      
 
@@ -207,15 +208,11 @@ export default function PersistentDrawerLeft(props) {
               key={item.label}
               className={classes.LinkClass}
               onClick={handleDrawerClose}
-              
-              
             >
               <ListItem button key={item.label}>
                 <ListItemIcon>
                   <ArrowRightIcon />
                 </ListItemIcon>
-
-                {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
                 <ListItemText primary={item.label} />
               </ListItem>
             </Link>
@@ -237,8 +234,6 @@ export default function PersistentDrawerLeft(props) {
                 <ListItemIcon>
                   <ArrowRightIcon />
                 </ListItemIcon>
-
-                {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
                 <ListItemText primary={item.label} />
               </ListItem>
             </Link>
@@ -259,8 +254,6 @@ export default function PersistentDrawerLeft(props) {
                 <ListItemIcon>
                   <ArrowRightIcon />
                 </ListItemIcon>
-
-                {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
                 <ListItemText primary={item.label} />
               </ListItem>
             </Link>

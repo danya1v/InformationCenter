@@ -49,15 +49,14 @@ export default function CustomizedTables(props) {
   }, [props.Id]);
 
   const classes = useStyles();
-  const [nameTable, setNameTable] = React.useState('zero');
   let nam = '';
+  
 
   // function namesRows (a) {
   //   for (let i = 0; i <= a ; i++){
   //     <StyledTableCell align="right">Факт</StyledTableCell>
   //   }
   // }
-  const vTable = props.table;
 
   
 
@@ -65,8 +64,9 @@ export default function CustomizedTables(props) {
   return (
     <>
     
-    {vTable === 1 ? (nam = (admpractic[props.Id -1]).label)
-         : vTable === 2 ? (nam = (voditel[props.Id -1]).label) : (nam = (auto[props.Id -1]).label)}
+    {props.table === 1 ? (nam = (admpractic[props.Id -1]).label)
+         : props.table === 2 ? (nam = (voditel[props.Id -1]).label) 
+         : (nam = (auto[props.Id -1]).label)}
          
 
          <Route render={()=><PersistentDrawerLeft nameTwo={nam}/>}/>  
