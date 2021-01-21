@@ -23,15 +23,17 @@ const useStyles = makeStyles({
 export default function AdmPractice(props) {
   // const [vTable, setVTable] = useState(props.table);
   const vTable = props.table;
-  
+  const vName = props.name;
+  const vURL = props.urlCashe;
 
   const classes = useStyles();
     
   return (
    
     <>
-    <Route component = {PersistentDrawerLeft} />
-    {console.log(props.name)}
+    {/* <Route component = {PersistentDrawerLeft} /> */}
+    <Route render={()=><PersistentDrawerLeft name={vName} url={vURL}/>}/>    
+    {console.log(vName)}
     <Container style={{ width: '110%' }}>
     {/* {props.table = 2 ? console.log(2): console.log('no')} */}
           <Grid item container spacing={1} bgcolor="background.paper" >

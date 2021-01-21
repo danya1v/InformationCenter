@@ -22,26 +22,26 @@ export default function MainFrame() {
         
 
 
-        <Route path ='/adminpractic' exact render={()=><AdmPractice table={table1} name={'Админпрактика'}/>}/>     
+        <Route path ='/adminpractic' exact render={()=><AdmPractice table={table1} name={'Админпрактика'} urlCashe = {'/adminpractic'}/>}/>     
         <Route path ='/adminpractic/:id' render={
           ({match}) => {
             const {id} = match.params;
-          return <CustomizedTables Id={id} />
+          return <CustomizedTables Id={id} table={table1}/>
           }
         }/>  
-        <Route path ='/driver' exact render={()=><AdmPractice table={table2} name={'Водитель'}/>}/>   
+        <Route path ='/driver' exact render={()=><AdmPractice table={table2} name={'Водитель'} urlCashe = {'/driver'}/>}/>   
         <Route path ='/driver/:id' render={
           
           ({match}) => {
             const {id} = match.params;
-          return <CustomizedTables Id={id} />
+          return <CustomizedTables Id={id} table={table2}/>
           }
         }/>  
-        <Route path ='/transport' exact render={()=><AdmPractice table={table3} name={'Транспорт'}/>}/>   
+        <Route path ='/transport' exact render={()=><AdmPractice table={table3} name={'Транспорт'} urlCashe = {'/transport'}/>}/>   
         <Route path ='/transport/:id' render={
           ({match}) => {
             const {id} = match.params;
-          return <CustomizedTables Id={id} />
+          return <CustomizedTables Id={id}table={table3} />
           }
         }/>  
 

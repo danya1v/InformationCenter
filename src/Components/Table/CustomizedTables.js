@@ -10,6 +10,11 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Axios from "axios";
 import { ExportCSV } from "./DownloadXLSX";
+import PersistentDrawerLeft from '../Menu/leftMenu';
+import {HashRouter as Router, Route} from 'react-router-dom';
+import admpractic from '../../admpractic';
+import voditel from '../../voditel';
+import auto from '../../auto';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -44,15 +49,27 @@ export default function CustomizedTables(props) {
   }, [props.Id]);
 
   const classes = useStyles();
+  const [nameTable, setNameTable] = React.useState('zero');
+  let nam = '';
 
   // function namesRows (a) {
   //   for (let i = 0; i <= a ; i++){
   //     <StyledTableCell align="right">Факт</StyledTableCell>
   //   }
   // }
+  const vTable = props.table;
+
+  
+
 
   return (
     <>
+    
+    {vTable === 1 ? (nam = (admpractic[props.Id -1]).label)
+         : vTable === 2 ? (nam = (voditel[props.Id -1]).label) : (nam = (auto[props.Id -1]).label)}
+         
+
+         <Route render={()=><PersistentDrawerLeft nameTwo={nam}/>}/>  
       <Grid container justify="center">
         <Grid item xs={10}>
           <TableContainer component={Paper}>

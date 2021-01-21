@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -32,6 +32,7 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import GrainIcon from "@material-ui/icons/Grain";
+import MainFrame from '../MainFrame/MainFrame';
 
 const drawerWidth = 350;
 
@@ -100,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "white",
     fontSize: "22px",
+    margin: "0 auto",
   },
   icon: {
     marginRight: theme.spacing(0.5),
@@ -112,15 +114,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //хлебные крошки
-function handleClick(event) {
-  // event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
+
 
 export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+   
+
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -129,8 +130,14 @@ export default function PersistentDrawerLeft(props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  
+
   return (
+    <>
     <div className={classes.root}>
+     
+
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -148,52 +155,33 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<Icon>send</Icon>}
-        style={{ marginRight: 40 }}
-      >
-        Send
-      </Button> */}
-          {/* <Typography variant="h6" noWrap>
-            Вернуться на главную
-          </Typography> */}
-          <Breadcrumbs aria-label="breadcrumb">
+        
             <Link
               color="inherit"
-              // href="/"
-              onClick={handleClick}
+             
               className={classes.link}
               to = "/"
             >
               <HomeIcon className={classes.icon} />
               Главное меню
             </Link>
-            <Link
-              color="inherit"
-              href="/getting-started/installation/"
-              onClick={handleClick}
-              className={classes.link}
-              to = "/"
-            >
-              <WhatshotIcon className={classes.icon} />
-              Core
-            </Link>
+            <Typography color="textPrimary" className={classes.link}>{props.name}</Typography>
+              
+              
+            
             <Typography color="textPrimary" className={classes.link}>
-              <GrainIcon className={classes.icon} />
-              Breadcrumb
+              
+              {props.nameTwo}
             </Typography>
-          </Breadcrumbs>
+          
 
-          <Typography variant="h6" className={classes.title}>
+          {/* <Typography variant="h6" className={classes.title}>
             Информационный портал РОИО ГИБДД
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </AppBar>
       <Drawer
-        className={classes.drawer}
+        className={classes.drawer}S
         variant="persistent"
         anchor="left"
         open={open}
@@ -219,6 +207,8 @@ export default function PersistentDrawerLeft(props) {
               key={item.label}
               className={classes.LinkClass}
               onClick={handleDrawerClose}
+              
+              
             >
               <ListItem button key={item.label}>
                 <ListItemIcon>
@@ -287,5 +277,7 @@ export default function PersistentDrawerLeft(props) {
         <div className={classes.drawerHeader} />
       </main>
     </div>
+    
+    </>
   );
 }
