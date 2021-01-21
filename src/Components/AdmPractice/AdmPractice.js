@@ -4,7 +4,8 @@ import CardTable from '../Table/CardTable';
 import admpractic from '../../admpractic';
 import voditel from '../../voditel';
 import auto from '../../auto';
-
+import PersistentDrawerLeft from '../Menu/leftMenu';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,11 +30,14 @@ export default function AdmPractice(props) {
   return (
    
     <>
+    <Route component = {PersistentDrawerLeft} />
+    {console.log(props.name)}
     <Container style={{ width: '110%' }}>
     {/* {props.table = 2 ? console.log(2): console.log('no')} */}
           <Grid item container spacing={1} bgcolor="background.paper" >
     
         <Grid item xs className={classes.flex}>
+          
           {vTable === 1 ? (admpractic.map((item, index) => (
           <Link key={item.label} to = {item.link} style={{width:'345px', textDecoration: 'none' }} >
           <CardTable 

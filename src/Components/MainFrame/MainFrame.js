@@ -18,22 +18,26 @@ export default function MainFrame() {
   <>
           
         <Router>
-        <Route component = {PersistentDrawerLeft} />
-        <Route path ='/adminpractic' exact render={()=><AdmPractice table={table1}/>}/>     
+
+        
+
+
+        <Route path ='/adminpractic' exact render={()=><AdmPractice table={table1} name={'Админпрактика'}/>}/>     
         <Route path ='/adminpractic/:id' render={
           ({match}) => {
             const {id} = match.params;
           return <CustomizedTables Id={id} />
           }
         }/>  
-        <Route path ='/driver' exact render={()=><AdmPractice table={table2}/>}/>   
+        <Route path ='/driver' exact render={()=><AdmPractice table={table2} name={'Водитель'}/>}/>   
         <Route path ='/driver/:id' render={
+          
           ({match}) => {
             const {id} = match.params;
           return <CustomizedTables Id={id} />
           }
         }/>  
-        <Route path ='/transport' exact render={()=><AdmPractice table={table3}/>}/>   
+        <Route path ='/transport' exact render={()=><AdmPractice table={table3} name={'Транспорт'}/>}/>   
         <Route path ='/transport/:id' render={
           ({match}) => {
             const {id} = match.params;
@@ -44,5 +48,6 @@ export default function MainFrame() {
          {/* <Route path ='/adminpractic/APtable2/' component={APtable2} exact/>     */}
   
     </Router>
+    
   </>
 )}

@@ -38,18 +38,18 @@ const useStyles = makeStyles({
 export default function CustomizedTables(props) {
   const [dataInfo, setDataInfo] = useState([0]);
   useEffect(() => {
-    Axios.get(`http://10.89.100.31:3001/api/get${props.Id}`).then((response) => {
+    Axios.get(`http://localhost:3001/api/get${props.Id}`).then((response) => {
       setDataInfo(response.data);
     });
   }, [props.Id]);
 
   const classes = useStyles();
 
-  function namesRows (a) {
-    for (let i = 0; i <= a ; i++){
-      <StyledTableCell align="right">Факт</StyledTableCell>
-    }
-  }
+  // function namesRows (a) {
+  //   for (let i = 0; i <= a ; i++){
+  //     <StyledTableCell align="right">Факт</StyledTableCell>
+  //   }
+  // }
 
   return (
     <>
@@ -59,28 +59,30 @@ export default function CustomizedTables(props) {
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell>Номер</StyledTableCell>
-                  <StyledTableCell align="right">ФИО</StyledTableCell>
+                  <StyledTableCell>Столбец №1</StyledTableCell>
+                  {Object.keys(dataInfo[0]).length > 1 ? (
+                    <StyledTableCell align="right">Столбец №2</StyledTableCell>
+                  ) : null}
                   {Object.keys(dataInfo[0]).length > 2 ? (
-                    <StyledTableCell align="right">Факт</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №3</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 3 ? (
-                    <StyledTableCell align="right">Факт</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №4</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 4 ? (
-                    <StyledTableCell align="right">Ещё что-то</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №5</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 5 ? (
-                    <StyledTableCell align="right">Ещё что-то</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №6</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 6 ? (
-                    <StyledTableCell align="right">Ещё что-то</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №7</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 7 ? (
-                    <StyledTableCell align="right">Ещё что-то</StyledTableCell>
+                    <StyledTableCell align="right">Столбец №8</StyledTableCell>
                   ) : null}
                   {Object.keys(dataInfo[0]).length > 8 ? (
-                    <StyledTableCell align="right">Ещё что-то</StyledTableCell>
+                    <StyledTableCell align="right">8</StyledTableCell>
                   ) : null}
                 </TableRow>
               </TableHead>
@@ -92,13 +94,19 @@ export default function CustomizedTables(props) {
                     </StyledTableCell>
                     <StyledTableCell align="right">
                       {row[Object.keys(row)[1]]}
+                      {/* ((row[Object.keys(row)[1]]).length) === 24 ? ((row[Object.keys(row)[1]]).substr(0, 10)) : (row[Object.keys(row)[1]]) */}
                     </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {row[Object.keys(row)[2]]}
-                    </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {row[Object.keys(row)[3]]}
-                    </StyledTableCell>
+                    {Object.keys(row).length >= 3 ? (
+                      <StyledTableCell align="right">
+                        {row[Object.keys(row)[2]]}
+                      </StyledTableCell>
+                    ) : null}
+                   
+                    {Object.keys(row).length >= 4 ? (
+                      <StyledTableCell align="right">
+                        {row[Object.keys(row)[3]]}
+                      </StyledTableCell>
+                    ) : null}
 
                     {Object.keys(row).length >= 5 ? (
                       <StyledTableCell align="right">
